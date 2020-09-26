@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:sophie_to_solid_structure/modules/search/domain/usecases/search_video_by_text.dart';
+import 'package:sophie_to_solid_structure/modules/search/external/datasources/youtube_datasource.dart';
+import 'package:sophie_to_solid_structure/modules/search/infra/repositories/search_repository_impl.dart';
 import 'app_widget.dart';
 import 'presenter/views/Home.dart';
 
@@ -10,6 +13,9 @@ class AppModule extends MainModule{
   // TODO: implement binds
   List<Bind> get binds => [
     Bind((i) => Dio()),
+    Bind((i) => YoutubeDatasource(i())),
+    Bind((i) => SearchRepository(i())),
+    Bind((i) => SearchVideoByText(i())),
   ];
 
   @override
