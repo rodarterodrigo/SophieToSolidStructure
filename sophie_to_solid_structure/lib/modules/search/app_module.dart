@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:sophie_to_solid_structure/views/Home.dart';
 import 'app_widget.dart';
+import 'presenter/views/Home.dart';
 
 
 class AppModule extends MainModule{

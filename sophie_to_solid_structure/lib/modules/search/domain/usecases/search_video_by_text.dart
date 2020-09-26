@@ -3,15 +3,15 @@ import 'package:sophie_to_solid_structure/modules/search/domain/entities/video.d
 import 'package:sophie_to_solid_structure/modules/search/domain/errors/errors.dart';
 import 'package:sophie_to_solid_structure/modules/search/domain/repositories/search_repository.dart';
 
-abstract class ISearchByText{
+abstract class ISearchVideoByText{
   Future<Either<FailureSearch, List<Video>>>searchVideo(String searchText);
 }
 
-class SearchByText implements ISearchByText{
+class SearchVideoByText implements ISearchVideoByText{
 
   final ISearchRepository repository;
 
-  SearchByText(this.repository);
+  SearchVideoByText(this.repository);
 
   @override
   Future<Either<FailureSearch, List<Video>>> searchVideo(String searchText) async {
