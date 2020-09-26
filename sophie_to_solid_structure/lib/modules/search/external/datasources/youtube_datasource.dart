@@ -10,7 +10,8 @@ const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 class YoutubeDatasource implements SearchDataSource{
   final Dio dio;
 
-  YoutubeDatasource({this.dio});
+  YoutubeDatasource(this.dio);
+
   @override
   Future<List<VideoModel>> getSearch(String searchText) async{
     final response = await dio.get(URL_BASE +
