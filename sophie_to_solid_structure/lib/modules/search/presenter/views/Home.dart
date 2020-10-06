@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
 
 class Home extends StatefulWidget {
   String search;
@@ -8,10 +10,23 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  final videoSearchBloc = Modular.get<VideoSearchBloc>();
+
+  @override
+  void initState(){
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    videoSearchBloc.close();
+  }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: null,
+      stream: videoSearchBloc,
       builder: (context, snapshot){
         return Scaffold(
           appBar: AppBar(
@@ -21,7 +36,7 @@ class _HomeState extends State<Home> {
             ),
             backgroundColor: Colors.white,
             title: Image.asset(
-              "Images/youtube.png",
+              "lib/assets/images/youtube.png",
               width: 100,
               height: 24,
             ),
@@ -38,20 +53,15 @@ class _HomeState extends State<Home> {
             padding: EdgeInsets.all(16),
             child: null,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 1,
-            onTap: (ind) => null,
-            type: BottomNavigationBarType.shifting,
-            fixedColor: Colors.white,
-            items: null,
-          ),
+          // bottomNavigationBar: BottomNavigationBar(
+          //   currentIndex: 1,
+          //   onTap: (ind) => null,
+          //   type: BottomNavigationBarType.shifting,
+          //   fixedColor: Colors.white,
+          //   items: null,
+          // ),
         );
       },
     );
-  }
-  @override
-  void dispose() {
-    //navBloc.dispose();
-    super.dispose();
   }
 }

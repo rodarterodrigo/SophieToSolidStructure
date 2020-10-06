@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:sophie_to_solid_structure/modules/search/domain/usecases/search_video_by_text.dart';
 import 'package:sophie_to_solid_structure/modules/search/external/datasources/youtube_datasource.dart';
 import 'package:sophie_to_solid_structure/modules/search/infra/repositories/search_repository_impl.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/navigation_bloc.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
 import 'app_widget.dart';
 import 'presenter/views/Home.dart';
@@ -18,6 +19,7 @@ class AppModule extends MainModule{
     Bind((i) => SearchRepository(i())),
     Bind((i) => SearchVideoByText(i())),
     Bind((i) => VideoSearchBloc(i())),
+    Bind((i) => NavigationBloc(i())),
   ];
 
   @override
