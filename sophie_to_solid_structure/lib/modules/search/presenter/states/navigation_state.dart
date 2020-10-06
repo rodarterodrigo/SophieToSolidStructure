@@ -12,6 +12,4 @@ class IndError implements INavigationState{
   IndError(this.indexError);
 }
 
-class IndexLoad implements INavigationState{}
-
 class IndexStart implements INavigationState{}

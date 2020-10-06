@@ -7,7 +7,6 @@ class VideoSearchBloc extends Bloc<String, ISearchState>{
   final ISearchVideoByText usecase;
   VideoSearchBloc(this.usecase) : super(SearchStart());
 
-
   @override
   Stream<ISearchState> mapEventToState(String searchText) async*{
    yield SearchLoad();

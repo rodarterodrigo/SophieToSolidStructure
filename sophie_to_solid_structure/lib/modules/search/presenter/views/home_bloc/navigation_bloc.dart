@@ -11,7 +11,6 @@ class NavigationBloc extends Bloc<int, INavigationState>{
 
   @override
   Stream<INavigationState> mapEventToState(int index) async*{
-    yield IndexLoad();
     this.index = index;
     yield IndexSuccess(this.index);
   }
