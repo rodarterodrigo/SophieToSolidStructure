@@ -1,10 +1,10 @@
-import 'package:sophie_to_solid_structure/modules/search/domain/errors/errors.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/errors/errors.dart';
 
 abstract class INavigationState{}
 
 class IndexSuccess implements INavigationState{
   final int index;
-  IndexSuccess(this.index);
+  IndexSuccess({this.index});
 }
 
 class IndError implements INavigationState{
