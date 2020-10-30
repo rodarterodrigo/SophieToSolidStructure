@@ -15,6 +15,17 @@ class _StartState extends State<Start> {
   final videoSearchBloc = Modular.get<VideoSearchBloc>();
 
   @override
+  void initState(){
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    videoSearchBloc.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     videoSearchBloc.add(widget.searchVideo);
     return StreamBuilder(

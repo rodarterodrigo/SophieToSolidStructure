@@ -19,7 +19,7 @@ class SearchRepository implements ISearchRepository{
     return Left(Exception);
     }
     catch(e){
-    return Left(DataSourceError());
+    return Left(DataSourceError(message: e));
     }
   }
 }
