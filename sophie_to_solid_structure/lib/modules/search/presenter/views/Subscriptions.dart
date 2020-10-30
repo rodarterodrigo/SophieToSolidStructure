@@ -8,6 +8,10 @@ class Subscriptions extends StatefulWidget {
 class _SubscriptionsState extends State<Subscriptions> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Text("Inscrições", style: TextStyle(
+        fontSize: 24,
+      ),),
+    );
   }
 }

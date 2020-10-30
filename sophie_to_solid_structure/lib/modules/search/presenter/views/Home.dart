@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/navigation/navigation.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/navigation_bloc.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
 
 class Home extends StatefulWidget {
   String search;
@@ -13,6 +14,7 @@ class _HomeState extends State<Home> {
 
   final navigationBloc = Modular.get<NavigationBloc>();
   final navigation = Modular.get<Navigation>();
+  final videoSearchBloc = Modular.get<VideoSearchBloc>();
 
   @override
   void initState(){
@@ -22,6 +24,7 @@ class _HomeState extends State<Home> {
   @override
   void dispose(){
     navigationBloc.close();
+    videoSearchBloc.close();
     super.dispose();
   }
 
@@ -45,16 +48,13 @@ class _HomeState extends State<Home> {
               actions: <Widget>[
                 IconButton(
                   icon: Icon(Icons.search),
-                  onPressed: () async {
-                    String res = await showSearch(
-                        context: context, delegate: null);
-                  },
+                  onPressed: () async =>videoSearchBloc.add(await showSearch(context: context, delegate: null)),
                 ),
               ],
             ),
             body: Container(
               padding: EdgeInsets.all(16),
-              child: navigation.viewList(navigationBloc.index, ""),
+              child: navigation.viewList(navigationBloc.index, videoSearchBloc.search),
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: navigationBloc.index,

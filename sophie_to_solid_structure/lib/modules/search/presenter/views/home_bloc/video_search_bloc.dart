@@ -5,11 +5,16 @@ import 'package:sophie_to_solid_structure/modules/search/presenter/states/search
 
 class VideoSearchBloc extends Bloc<String, ISearchState>{
   final ISearchVideoByText usecase;
-  VideoSearchBloc(this.usecase) : super(SearchStart());
+  VideoSearchBloc(this.usecase) : super(SearchLoad());
+
+  String _search = "";
+  get search => _search;
+  set search(value) => _search = value;
 
   @override
   Stream<ISearchState> mapEventToState(String searchText) async*{
    yield SearchLoad();
+   search = searchText;
    final result = await usecase.searchVideo(searchText);
    yield result.fold((l) => SearchError(l), (r) => SearchSuccess(r));
   }

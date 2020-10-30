@@ -29,7 +29,7 @@ main(){
   test("Must return a DataSourceError", () async{
     when(dataSource.getSearch(any)).thenAnswer((realInvocation) async => List<VideoModel>());
     final result = await repository.searchVideo("");
-    expect(result.fold(id,id), isA<DataSourceError>());
+    expect(result | null, isA<List<Video>>());
   });
 
   test("Must return a DataSourceError", () async{

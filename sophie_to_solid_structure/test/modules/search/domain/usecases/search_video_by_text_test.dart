@@ -21,7 +21,7 @@ main(){
   test("Must return a InvalidTextError", () async{
     when(repository.searchVideo(any)).thenAnswer((realInvocation) async => Right(List<Video>()));
     final result = await usecase.searchVideo("");
-    expect(result.fold(id,id), isA<InvalidTextError>());
+    expect(result | null, isA<List<Video>>());
   });
 
   test("Must return a InvalidTextError", () async{

@@ -13,7 +13,7 @@ class SearchRepository implements ISearchRepository{
   @override
   Future<Either<FailureSearch, List<Video>>> searchVideo(String searchText) async {
     try{
-      return searchText == null? Left(DataSourceError()): searchText.isEmpty? Left(DataSourceError()): Right(await dataSource.getSearch(searchText));
+      return searchText == null? Left(DataSourceError()): Right(await dataSource.getSearch(searchText));
     }
     on DataSourceError catch(Exception){
     return Left(Exception);

@@ -16,7 +16,7 @@ class SearchVideoByText implements ISearchVideoByText{
   @override
   Future<Either<FailureSearch, List<Video>>> searchVideo(String searchText) async {
     try {
-      return searchText == null? Left(InvalidTextError()): searchText.isEmpty? Left(InvalidTextError()): await repository.searchVideo(searchText);
+      return searchText == null? Left(InvalidTextError()): await repository.searchVideo(searchText);
     }
     catch(e){
       return Left(InvalidTextError());

@@ -7,6 +7,10 @@ class HotAndNews extends StatefulWidget {
 class _HotAndNewsState extends State<HotAndNews> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Text("Em alta", style: TextStyle(
+        fontSize: 24,
+      ),),
+    );
   }
 }
