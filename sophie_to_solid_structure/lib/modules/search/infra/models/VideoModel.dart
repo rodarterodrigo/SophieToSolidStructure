@@ -3,7 +3,7 @@ import 'package:sophie_to_solid_structure/modules/search/domain/entities/video.d
 
 class VideoModel extends Video {
 
-  VideoModel({id, title, description, image, channel});
+  VideoModel({id, title, description, image, channel}):super(id:id, title:title, description:description, image:image, channel:channel);
 
   static VideoModel fromMap(Map<String, dynamic> map){
     if(map == null) return null;
