@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/navigation/navigation.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/search_delegate/custom_search_delegate.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/navigation_bloc.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
 
@@ -48,7 +49,7 @@ class _HomeState extends State<Home> {
               actions: <Widget>[
                 IconButton(
                   icon: Icon(Icons.search),
-                  onPressed: () async =>videoSearchBloc.add(await showSearch(context: context, delegate: null)),
+                  onPressed: () async =>videoSearchBloc.add(await showSearch(context: context, delegate: CustomSearchDelegate())),
                 ),
               ],
             ),
