@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:sophie_to_solid_structure/modules/search/external/datasources/youtube_datasource.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/states/search_state.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
 
 class Start extends StatefulWidget {
   String searchVideo;
@@ -53,7 +55,14 @@ class _StartState extends State<Start> {
               return Column(
                 children: [
                   GestureDetector(
-                    onTap: (){},
+                    onTap: () => FlutterYoutube.playYoutubeVideoById(
+                        apiKey: YOUTUBE_API_KEY,
+                        videoId: video.id,
+                        fullScreen: false,
+                        appBarColor: Colors.black,
+                        appBarVisible: true,
+                        autoPlay: true,
+                  ),
                     child: Container(
                       height: 200,
                       decoration: BoxDecoration(

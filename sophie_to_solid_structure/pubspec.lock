@@ -14,7 +14,7 @@ packages:
       name: bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.3"
+    version: "6.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -63,7 +63,7 @@ packages:
       name: dartz
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1"
+    version: "0.9.2"
   dio:
     dependency: "direct main"
     description:
@@ -95,6 +95,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_youtube:
+    dependency: "direct dev"
+    description:
+      name: flutter_youtube
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0+1"
   http_parser:
     dependency: transitive
     description:
@@ -200,3 +207,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.9.0-14.0.dev <3.0.0"
+  flutter: ">=1.12.13+hotfix.5 <2.0.0"
