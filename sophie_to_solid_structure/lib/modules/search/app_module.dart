@@ -5,8 +5,10 @@ import 'package:sophie_to_solid_structure/modules/search/domain/usecases/search_
 import 'package:sophie_to_solid_structure/modules/search/external/datasources/youtube_datasource.dart';
 import 'package:sophie_to_solid_structure/modules/search/infra/repositories/search_repository_impl.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/navigation/navigation.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/routes/app_pages.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/navigation_bloc.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/views/video_detail_page.dart';
 import 'app_widget.dart';
 import 'presenter/views/Home.dart';
 
@@ -31,6 +33,7 @@ class AppModule extends MainModule{
   @override
   // TODO: implement routers
   List<ModularRouter> get routers => [
-    ModularRouter('/', child: (x, y) => Home()),
+    ModularRouter(Routes.INITIAL, child: (context, args) => Home()),
+    ModularRouter(Routes.VIDEODETAILPAGE, child: (context, args) => VideoDetailPage(video: args.data,),),
   ];
 }

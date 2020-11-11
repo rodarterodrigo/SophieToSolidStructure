@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/search_delegate/search_helper.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/states/search_state.dart';
 import 'package:sophie_to_solid_structure/modules/search/presenter/views/home_bloc/video_search_bloc.dart';
+import 'package:sophie_to_solid_structure/modules/search/presenter/views/video_detail_page.dart';
 
 class CustomSearchDelegate extends SearchDelegate<String>{
   final VideoSearchBloc videoSearchBloc = Modular.get<VideoSearchBloc>();
@@ -85,7 +86,8 @@ class CustomSearchDelegate extends SearchDelegate<String>{
                     return Column(
                       children: <Widget>[
                         ListTile(
-                          onTap: () => close(context, video.title),
+                          //onTap: () => close(context, video.title),
+                          onTap: () => Modular.to.pushNamed('/VIDEODETAILPAGE', arguments: video),
                           title: Text(video.title),
                         ),
                       ],
