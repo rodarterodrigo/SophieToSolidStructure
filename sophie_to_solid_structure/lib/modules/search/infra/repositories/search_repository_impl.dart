@@ -6,7 +6,7 @@ import 'package:sophie_to_solid_structure/modules/search/infra/datasources/searc
 
 class SearchRepository implements ISearchRepository{
 
-  final SearchDataSource dataSource;
+  final ISearchDataSource dataSource;
 
   SearchRepository(this.dataSource);
 

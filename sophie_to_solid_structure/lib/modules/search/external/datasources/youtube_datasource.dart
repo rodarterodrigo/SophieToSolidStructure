@@ -7,7 +7,7 @@ const YOUTUBE_API_KEY = "AIzaSyBMBJ4gIGKsmq4DsS4CPb52Z4wkZ8zeeYs";
 const CHANNEL_KEY = "UCuVIWETFdxzwlHEHMbhm2_w";
 const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 
-class YoutubeDatasource implements SearchDataSource{
+class YoutubeDatasource implements ISearchDataSource{
   final Dio dio;
 
   YoutubeDatasource(this.dio);

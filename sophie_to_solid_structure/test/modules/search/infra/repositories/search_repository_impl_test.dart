@@ -7,7 +7,7 @@ import 'package:sophie_to_solid_structure/modules/search/infra/datasources/searc
 import 'package:sophie_to_solid_structure/modules/search/infra/models/VideoModel.dart';
 import 'package:sophie_to_solid_structure/modules/search/infra/repositories/search_repository_impl.dart';
 
-class SearchDataSourceMock extends Mock implements SearchDataSource{}
+class SearchDataSourceMock extends Mock implements ISearchDataSource{}
 
 main(){
 

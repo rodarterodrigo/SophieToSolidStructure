@@ -19,7 +19,7 @@ class SearchVideoByText implements ISearchVideoByText{
       return searchText == null? Left(InvalidTextError()): await repository.searchVideo(searchText);
     }
     catch(e){
-      return Left(InvalidTextError());
+      return Left(InvalidTextError(message: e));
     }
   }
 }
